@@ -1,10 +1,13 @@
 import random as rd
 import dictionary as dic
 
-# set the difficulty of password generated.
-easy = 5
-normal = 9
-hard = 13
+# a list of the alpabet and symbols.
+alphabet_and_symbols = ["a", "b", "c", "d", "e", "f", "g", "h", "i",
+                        "j", "k", "l", "m", "n", "o", "p", "q", "r", 
+                        "x", "t", "u", "v", "w", "x", "y", "z", "!", 
+                        "$", "?", ".", 1 , 2, 3, 4, 5, 6, 7, 8 , 9, 
+                        0]
+
 
 # transforms a heterogenous (strings and integers) list into a string.
 def combination(strings_and_integers):
@@ -16,27 +19,12 @@ def combination(strings_and_integers):
 list = []
 
 # generates a random-set of alphebtical values.
-for i in range(normal):
-    list.append(rd.choice(dic.alphabet))
-
-# generates a random-set of symbolic values.
-for i in range(normal):
-    list.append(rd.choice(dic.symbols))
-
-# generates a random-set of numerical values.
-for i in range(normal):
-    list.append(rd.randint(0, 100))
+for i in range(7):
+    list.append(rd.choice(alphabet_and_symbols))
 
 
+print(f"--- List --- \n{list}")
 
-print(list)
+final_password = combination(list)
 
-
-
-
-# final_password = combination(list)
-
-# print(f'--- Password --- \n"{final_password}"')
-
-
-
+print(f'--- Password --- \n"{final_password}"')
